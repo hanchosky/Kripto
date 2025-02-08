@@ -1,18 +1,20 @@
-// Archivo: App.tsx
-// Descripción: Este es el archivo principal.
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import CryptoListScreen from '../CryptoListScreen';
+import CryptoListScreen from './screens/CryptoListScreen';
+import CryptoApi from './components/CryptoApi';
 
 const Stack = createStackNavigator();
 
-export default function App() {
+const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="CryptoList" component={CryptoListScreen} />
+      <Stack.Navigator initialRouteName="CryptoListScreen">
+        <Stack.Screen name="CryptoListScreen" component={CryptoListScreen} />
+        <Stack.Screen name="CryptoDetail" component={CryptoApi} />
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+export default App;

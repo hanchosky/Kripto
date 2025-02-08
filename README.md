@@ -21,14 +21,14 @@ Abre una terminal en tu sistema.
  2. En la terminal, instala las dependencias necesarias ejecutando:
     npm install
 
-# Paso 4: Descargar Expo Go
+# Paso 3: Descargar Expo Go
  1. Descargar Expo Go en tu dispositivo móvil:
 
 - Para Android: Abre Google Play Store, busca "Expo Go" y descarga la aplicación.
 
 - Para iOS: Abre App Store, busca "Expo Go" y descarga la aplicación.    
 
-# Paso 5: Ejecutar el Proyecto
+# Paso 4: Ejecutar el Proyecto
  1. Inicia el servidor de desarrollo de Expo:
     npm start
 

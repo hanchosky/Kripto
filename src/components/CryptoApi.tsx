@@ -1,10 +1,9 @@
-// Archivo: CryptoListScreen.tsx
-// Asegúrate de tener configurado TypeScript y de que este archivo tenga la extensión .tsx
-
+// Archivo: CryptoApi.tsx
+// Este componente se encarga de obtener y mostrar una lista de criptomonedas.
+// Los usuarios pueden buscar criptomonedas y ver detalles básicos como el nombre, símbolo y precio en USD.
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
-// Usamos un alias de tipo en lugar de interface para definir el tipo Crypto
 type Crypto = {
   id: string;
   name: string;
@@ -12,7 +11,7 @@ type Crypto = {
   price_usd: string;
 };
 
-const CryptoListScreen = ({ navigation }: { navigation: any }) => {
+const CryptoApi = ({ navigation }: { navigation: any }) => {
   const [cryptos, setCryptos] = useState<Crypto[]>([]);
   const [filteredCryptos, setFilteredCryptos] = useState<Crypto[]>([]);
   const [search, setSearch] = useState('');
@@ -22,7 +21,6 @@ const CryptoListScreen = ({ navigation }: { navigation: any }) => {
       .then(response => response.json())
       .then(data => {
         if (data && data.data && Array.isArray(data.data)) {
-          // Convertimos id y price_usd a cadenas
           const formattedData = data.data.map((crypto: any) => ({
             id: crypto.id.toString(),
             name: crypto.name,
@@ -82,4 +80,4 @@ const styles = StyleSheet.create({
   itemText: { fontSize: 16 },
 });
 
-export default CryptoListScreen;
+export default CryptoApi;

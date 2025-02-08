@@ -1,16 +1,16 @@
-// Descripción: Este archivo contiene la función para obtener datos de criptomonedas desde la API de Coinlore.
+// Archivo: cryptoService.ts
 import axios from 'axios';
 import Cryptocurrency from '../models/Cryptocurrency';
 
 const API_URL = 'https://api.coinlore.net/api/tickers/';
 
-// Define the type for the API response
+// Define el tipo para la respuesta de la API
 interface ApiResponse {
   data: Array<{
     id: string;
     name: string;
     symbol: string;
-    price_usd: string;  // La API puede devolver el precio como cadena, puede ajustarse segun se quiera 
+    price_usd: string;
   }>
 }
 
