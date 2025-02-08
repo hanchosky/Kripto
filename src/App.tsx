@@ -1,8 +1,9 @@
 // Archivo: App.tsx
+// Descripción: Este es el archivo principal.
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import CryptoListScreen from './CryptoListScreen';
+import CryptoListScreen from '../CryptoListScreen';
 
 const Stack = createStackNavigator();
 
